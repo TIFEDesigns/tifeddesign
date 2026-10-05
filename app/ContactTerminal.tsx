@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-import { ContactFormState } from '../types/portfolio';
+import { ContactFormState } from './types/portfolio';
 
 export const ContactTerminal: React.FC = () => {
   const [form, setForm] = useState<ContactFormState>({ name: '', email: '', message: '' });
@@ -26,7 +26,7 @@ export const ContactTerminal: React.FC = () => {
 
           <div style={{ 
             display: 'flex',
-            justify: 'space-between',
+            justifyContent: 'space-between',
             padding: '12px',
             marginBottom: '24px',
             borderBottom: '1px solid var(--bg-card-border)' }}>
@@ -77,7 +77,7 @@ export const ContactTerminal: React.FC = () => {
             <div style={{ 
             display: 'flex',
             flexDirection: 'column',
-            justify: 'space-between',
+            justifyContent: 'space-between',
             padding: '32px',
             gap: '12px',
             marginBottom: '24px',
