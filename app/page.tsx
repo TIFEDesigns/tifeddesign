@@ -10,7 +10,6 @@ import { TheLab } from './TheLab';
 import { ProjectsGrid } from './ProjectsGrid';
 import { ProcessPipeline } from './ProcessPipeline';
 import { SkillsGrid } from './SkillsGrid';
-import { ContactTerminal } from './ContactTerminal';
 import { Footer } from './Footer';
 
 export default function Home(): React.JSX.Element {
