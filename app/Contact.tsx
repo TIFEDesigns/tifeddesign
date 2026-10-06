@@ -5,7 +5,7 @@ import { ContactFormState } from './types/portfolio';
 import {CheckCircle2 } from 'lucide-react';
 
 export const Contact: React.FC = () => {
-  const [form, setForm] = useState<contactFormState>({ 
+  const [form, setForm] = useState<ContactFormState>({ 
     name: '', 
     email: '', 
     message: '' 
@@ -150,7 +150,7 @@ const [formSubmitted, setFormSubmitted] = useState(false);
                   padding: '32px',
                   gap: '12px',
                   marginBottom: '24px',
-                  width: '40%',
+                  width: '100%',
                   backgroundColor: '#02040a',
                   alignSelf: 'center',
                   border: '1px solid var(--bg-card-border)',
@@ -234,19 +234,6 @@ const [formSubmitted, setFormSubmitted] = useState(false);
                   </div>
               </div>
 
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-cyan-500/30 group">
-                <img 
-                  src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" 
-                  alt="SciFi Outro" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-black/40 to-transparent p-4 flex items-end">
-                  <p className="text-xs font-mono text-cyan-300 italic">
-                    "Not just a portfolio... but an experience."
-                  </p>
-                </div>
-              </div>
 
             </div>
 
