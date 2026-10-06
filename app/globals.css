@@ -86,6 +86,13 @@ button, input, textarea {
   box-shadow: 0 0 20px var(--cyan-glow);
 }
 
+.hud-card h2{
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
 .skills-title {
   display: flex;
   padding: 12px;
@@ -101,6 +108,9 @@ button, input, textarea {
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  display: block;
 }
 .software-mastery {
   font-size: 0.75rem;
@@ -108,13 +118,11 @@ button, input, textarea {
   font-family: var(--font-mono);
 }
 .section-tag {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--cyan-accent);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 8px;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
 }
 
 .skill-card {

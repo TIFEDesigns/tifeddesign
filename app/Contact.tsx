@@ -50,13 +50,13 @@ const [formSubmitted, setFormSubmitted] = useState(false);
             justifyContent: 'space-between',
             padding: '12px',
             marginBottom: '24px',
-            borderBottom: '1px solid var(--bg-card-border)' 
+            borderBottom: '1px solid var(--bg-card-border)', 
             }}
             >
 
-            <h2>6. CONTACT </h2>
+            <h2 className='section-tag'>6. CONTACT </h2>
 
-            <h3 style={{ color: 'var(--cyan-accent)' }}>
+            <h3 className='software-mastery'>
               Let's create something amazing
             </h3>
           </div>

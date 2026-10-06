@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProcessStep } from '../types/portfolio';
+import { ProcessStep } from './types/portfolio';
 
 const STEPS: ProcessStep[] = [
   { step: '01', title: 'IDEA', desc: 'Concept & Inspiration' },
