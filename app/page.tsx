@@ -10,6 +10,7 @@ import { TheLab } from './TheLab';
 import { ProjectsGrid } from './ProjectsGrid';
 import { ProcessPipeline } from './ProcessPipeline';
 import { SkillsGrid } from './SkillsGrid';
+import { Contact } from './Contact';
 import { Footer } from './Footer';
 
 export default function Home(): React.JSX.Element {
@@ -25,7 +26,7 @@ export default function Home(): React.JSX.Element {
         <ProjectsGrid />
         <ProcessPipeline />
         <SkillsGrid />
-        <ContactTerminal />
+        <Contact />
         <Footer />
       </div>
     </div>
