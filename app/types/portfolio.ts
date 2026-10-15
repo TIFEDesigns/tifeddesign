@@ -1,3 +1,5 @@
+import type React from "react";
+
 export interface ContactFormState {
   name: string;
   email: string;
@@ -32,3 +34,7 @@ export const STEPS: ProcessStep[] = [
     desc: "Color & Sound",
   },
 ];
+export interface HeaderProps {
+  isAiMode: boolean;
+  setIsAiMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
