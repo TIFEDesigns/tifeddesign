@@ -19,12 +19,12 @@ type AnimationProject = {
 const ANIMATIONS: AnimationProject[] = [
   {
     id: 1,
-    title: "The Last Light",
-    category: "AI SHORT FILM",
+    title: "Skincare SuperHero",
+    category: "SKINCARE SHOWCASE",
     duration: "02:48",
     poster:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=85",
-    video: "/videos/the-last-light.mp4",
+    video: "/skincareSuperHero.mp4",
     description:
       "A dark sci-fi animation created using Midjourney V6, Runway Gen-3 Alpha, and AnimateDiff with custom LoRAs.",
     tools: ["Runway Gen-3", "ComfyUI", "AnimateDiff"],
@@ -36,7 +36,7 @@ const ANIMATIONS: AnimationProject[] = [
     duration: "01:35",
     poster:
       "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=900&q=85",
-    video: "/videos/naturalSoap.mp4",
+    video: "/naturalSoap.mp4",
     description:
       "A futuristic visual journey exploring character design, atmospheric lighting, and AI-generated environments.",
     tools: ["Midjourney", "Runway", "After Effects"],
@@ -48,7 +48,7 @@ const ANIMATIONS: AnimationProject[] = [
     duration: "03:12",
     poster:
       "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
-    video: "/videos/sheaButters.mp4",
+    video: "/sheaButters.mp4",
     description:
       "A cinematic character concept combining futuristic environments, motion design, and atmospheric visual effects.",
     tools: ["Blender 3D", "ComfyUI", "DaVinci Resolve"],
