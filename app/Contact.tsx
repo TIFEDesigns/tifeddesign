@@ -212,14 +212,6 @@ export const Contact: React.FC = () => {
         </div>
       </section>
 
-      <footer className="contact-footer">
-        <p>
-          © {new Date().getFullYear()} TIFED — AI ANIMATION & DIGITAL
-          EXPERIENCES. ALL RIGHTS RESERVED.
-        </p>
-
-        <span>ENGINEERED WITH REACT, CSS & CANVAS SHADERS</span>
-      </footer>
     </>
   );
 };

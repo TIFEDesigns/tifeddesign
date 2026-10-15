@@ -313,3 +313,45 @@ button, input, textarea {
 .terminal-box input:focus, .terminal-box textarea:focus {
   border-color: var(--cyan-accent);
 }
+
+
+
+/* FOOTER */
+
+.contact-footer {
+  position: relative;
+  width: 100%;
+  min-height: 83px;
+  padding: 19px 16px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-top: 1px solid rgba(105, 145, 180, 0.2);
+  color: #6e819d;
+  background: #030918;
+  text-align: center;
+}
+
+.contact-footer p {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.contact-footer span {
+  color: #1fd4ed;
+  font-family: "Courier New", monospace;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .contact-footer {
+    padding: 20px 18px;
+  }
+}
