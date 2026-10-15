@@ -1,248 +1,227 @@
+
 "use client";
 
-import React, { useState, FormEvent, ChangeEvent } from 'react';
-import { ContactFormState } from './types/portfolio';
-import {CheckCircle2 } from 'lucide-react';
+import React, { useState, type ChangeEvent, type FormEvent } from "react";
+import { CheckCircle2, Send } from "lucide-react";
+import "./Contact.css";
+
+type ContactFormState = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 export const Contact: React.FC = () => {
-  const [form, setForm] = useState<ContactFormState>({ 
-    name: '', 
-    email: '', 
-    message: '' 
+  const [form, setForm] = useState<ContactFormState>({
+    name: "",
+    email: "",
+    message: "",
   });
-const [formSubmitted, setFormSubmitted] = useState(false);
 
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
 
-    setForm((prev) => ({ 
-      ...prev, 
-      [name]: value 
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    alert(`Message sent by ${form.name}!`);
+    // This is a frontend demo. Connect an email service or API
+    // before treating a submission as a message that was delivered.
+    const subject = encodeURIComponent(
+      `Portfolio inquiry from ${form.name}`
+    );
+
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nProject brief:\n${form.message}`
+    );
+
+    window.location.href =
+      `mailto:tifeddesigns@gmail.com?subject=${subject}&body=${body}`;
 
     setFormSubmitted(true);
-
-    setForm({ 
-      name: '', 
-      email: '', 
-      message: '' 
-    });
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact" className="hud-card">
-      <div>
-
-        <div>
-
-
-          <div style={{ 
-            display: 'flex',
-            justifyContent: 'space-between',
-            padding: '12px',
-            marginBottom: '24px',
-            borderBottom: '1px solid var(--bg-card-border)', 
-            }}
-            >
-
-            <h2 className='section-tag'>6. CONTACT </h2>
-
-            <h3 className='software-mastery'>
-              Let's create something amazing
-            </h3>
-          </div>
-
-          <div style={{ 
-            display: 'flex',
-            gap: '1.5rem'
-          }}>
-
-            <div style={{ width:'60%'}}>
-
-              {formSubmitted ? (
-                <div className="p-8 text-center space-y-4 font-mono">
-                  <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto animate-bounce" />
-
-                  <h3 className="text-xl font-bold text-white">
-                    COMMISSION PROMPT TRANSMITTED
-                  </h3>
-                  <p className="text-xs text-slate-400">
-                    Thank you! Your inquiry has been logged in the latent queue. 
-                    TIFED will respond shortly.
-                  </p>
-
-                  <button 
-                    type='button'
-                    onClick={() => setFormSubmitted(false)}
-                    className="px-6 py-2 rounded-lg bg-slate-900 border border-cyan-500/40 text-cyan-300 text-xs"
-                  >
-                    SEND ANOTHER PROMPT
-                  </button>
-
-                </div>
-              ) : 
-
-              (
-                <form onSubmit={handleSubmit} className="terminal-box">
-                  <label 
-                    style={{ 
-                      fontSize: '0.75rem', 
-                      color: 'var(--text-muted)' 
-                    }}>
-                        // ENTER YOUR DETAILS
-                  </label>
-
-                  <input 
-                    type="text" 
-                    name="name"
-                    placeholder="Name" 
-                    value={form.name} 
-                    onChange={handleChange} 
-                    required 
-                  />
-
-                  <input 
-                    type="email" 
-                    name="email"
-                    placeholder="Email" 
-                    value={form.email} 
-                    onChange={handleChange} 
-                    required 
-                  />
-
-                  <textarea 
-                    name="message"
-                    placeholder="Message / Project Brief..." 
-                    rows={4} 
-                    value={form.message} 
-                    onChange={handleChange} 
-                    required 
-                  />
-
-                  <button 
-                  type="submit" 
-                  className="btn-primary" 
-                  style={{ marginTop: '8px' }}
-                  >
-                    SEND MESSAGE →
-                  </button>
-                </form>
-              )}
-            </div>
-          
-
-            <div style={{ width: "40%"}}>
-
-              <div 
-                style={{ 
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  padding: '32px',
-                  gap: '12px',
-                  marginBottom: '24px',
-                  width: '100%',
-                  backgroundColor: '#02040a',
-                  alignSelf: 'center',
-                  border: '1px solid var(--bg-card-border)',
-                  borderRadius: '8px'
-                }}
-              >
-                  <h3> DIRECT CHANNELS </h3>
-
-                  <div 
-                    style={{ 
-                      display: 'flex', 
-                      flexDirection: 'column', 
-                      gap: '1rem', 
-                      marginTop: '1rem'
-                    }}
-                  >
-                    <a href="mailto:tifeddesigns@gmail.com" 
-                      style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        gap: '1rem'
-                      }}
-                    >
-                      <span 
-                        style={{ 
-                          padding: '7px', 
-                          color:'var(--cyan-accent)', 
-                          backgroundColor: '#1E293B', 
-                          borderRadius: '3px'
-                        }}
-                      >
-                            @
-                      </span>
-
-                      <span>tifeddesigns@gmail.com</span>
-                    </a>
-
-                    <a 
-                      href="#" 
-                      style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        gap: '1rem'
-                      }}
-                    >
-                      <span 
-                        style={{ 
-                          padding: '7px', 
-                          color:'var(--cyan-accent)', 
-                          backgroundColor: '#1E293B', 
-                          borderRadius: '3px'
-                        }}
-                      >
-                            IG
-                      </span>
-
-                      <span>tifed_designs</span>
-                    </a>
-
-                    <a 
-                      href="#" 
-                      style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        gap: '1rem'
-                      }}
-                    >
-                      <span 
-                        style={{ 
-                          padding: '7px', 
-                          color:'var(--cyan-accent)', 
-                          backgroundColor: '#1E293B', 
-                          borderRadius: '3px'
-                        }}
-                      > 
-                          TT
-                      </span>
-                      <span>tifed_designs</span>
-                    </a>
-
-                  </div>
+    <>
+      <section id="contact" className="contact-section">
+        <div className="contact-layout">
+          {/* LEFT: TERMINAL CONTACT FORM */}
+          <div className="contact-terminal">
+            <div className="terminal-header">
+              <div className="terminal-window-dots" aria-hidden="true">
+                <span className="terminal-dot dot-red" />
+                <span className="terminal-dot dot-yellow" />
+                <span className="terminal-dot dot-green" />
               </div>
 
+              <span className="terminal-filename">
+                prompt_commission.sh
+              </span>
 
+              <span className="terminal-version">
+                TIFED_TERMINAL_V4
+              </span>
             </div>
 
+            {formSubmitted ? (
+              <div className="contact-success" role="status">
+                <CheckCircle2
+                  className="contact-success-icon"
+                  size={42}
+                  aria-hidden="true"
+                />
+
+                <h2>COMMISSION PROMPT PREPARED</h2>
+
+                <p>
+                  Your email application should open with your project
+                  inquiry ready to send. Complete the send action there
+                  to deliver your message.
+                </p>
+
+                <button
+                  type="button"
+                  className="contact-reset-button"
+                  onClick={() => setFormSubmitted(false)}
+                >
+                  SEND ANOTHER PROMPT
+                </button>
+              </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="contact-field">
+                  <label htmlFor="contact-name">
+                    <span aria-hidden="true">&gt;</span> INPUT YOUR NAME:
+                  </label>
+
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    placeholder="e.g., Sarah Connor"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="contact-field">
+                  <label htmlFor="contact-email">
+                    <span aria-hidden="true">&gt;</span> INPUT YOUR EMAIL:
+                  </label>
+
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    placeholder="e.g., sarah@cyberdyne.com"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="contact-field">
+                  <label htmlFor="contact-message">
+                    <span aria-hidden="true">&gt;</span> PROMPT BRIEF / PROJECT DETAILS:
+                  </label>
+
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    placeholder="Describe project concept, timeline, budget range..."
+                    rows={4}
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <button type="submit" className="contact-submit">
+                  <Send size={15} aria-hidden="true" />
+                  <span>SEND MESSAGE</span>
+                </button>
+              </form>
+            )}
           </div>
 
+          {/* RIGHT: CONTACT CHANNELS AND FEATURED IMAGE */}
+          <aside className="contact-sidebar">
+            <div className="contact-channels">
+              <h2>DIRECT CHANNELS</h2>
 
+              <a
+                className="contact-channel"
+                href="mailto:tifeddesigns@gmail.com"
+              >
+                <span className="contact-channel-icon" aria-hidden="true">
+                  @
+                </span>
+                <span>tifeddesigns@gmail.com</span>
+              </a>
+
+              <a
+                className="contact-channel"
+                href="https://www.instagram.com/tifed_designs/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="contact-channel-icon" aria-hidden="true">
+                  IG
+                </span>
+                <span>@tifed_designs</span>
+              </a>
+
+              <a
+                className="contact-channel"
+                href="https://www.tiktok.com/@tifed_designs"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="contact-channel-icon" aria-hidden="true">
+                  TT
+                </span>
+                <span>@tifed_designs</span>
+              </a>
+            </div>
+
+            <div className="contact-artwork">
+              <img
+                src="/images/contact-character.webp"
+                alt="Featured AI animation character artwork"
+                loading="lazy"
+              />
+
+              <div className="contact-artwork-overlay" />
+
+              <p>"Not just a portfolio... but an experience."</p>
+            </div>
+          </aside>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <footer className="contact-footer">
+        <p>
+          © {new Date().getFullYear()} TIFED — AI ANIMATION & DIGITAL
+          EXPERIENCES. ALL RIGHTS RESERVED.
+        </p>
+
+        <span>ENGINEERED WITH REACT, CSS & CANVAS SHADERS</span>
+      </footer>
+    </>
   );
 };
+
+export default Contact;

@@ -1,0 +1,501 @@
+
+/* Contact.css */
+
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 32px 4% 28px;
+  overflow: hidden;
+  color: #edf2fc;
+  background: #030b18;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 188, 231, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 188, 231, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+/* MAIN TWO-COLUMN LAYOUT */
+
+.contact-layout {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+}
+
+/* TERMINAL FORM */
+
+.contact-terminal {
+  min-width: 0;
+  padding: 27px 29px 29px;
+  border: 1px solid rgba(0, 198, 235, 0.42);
+  border-radius: 16px;
+  background: #030919;
+  box-shadow: 0 0 35px rgba(0, 174, 225, 0.035);
+}
+
+.terminal-header {
+  min-height: 28px;
+  padding-bottom: 16px;
+  margin-bottom: 27px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(120, 145, 180, 0.2);
+}
+
+.terminal-window-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.terminal-dot {
+  width: 11px;
+  height: 11px;
+  display: block;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background: #ef4444;
+}
+
+.dot-yellow {
+  background: #eab308;
+}
+
+.dot-green {
+  background: #10b981;
+}
+
+.terminal-filename {
+  min-width: 0;
+  color: #b6c4d8;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+}
+
+.terminal-version {
+  margin-left: auto;
+  color: #28d9ee;
+  font-family: "Courier New", monospace;
+  font-size: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* FORM FIELDS */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.contact-field label {
+  color: #20d7ef;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.contact-field label span {
+  margin-right: 5px;
+  font-size: 13px;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #243147;
+  border-radius: 11px;
+  outline: none;
+  color: #edf2fc;
+  background: #10192b;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-field input {
+  min-height: 39px;
+}
+
+.contact-field textarea {
+  min-height: 81px;
+  resize: vertical;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #9ba8bb;
+  opacity: 1;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #16cbe8;
+  background: #0c1628;
+  box-shadow: 0 0 0 3px rgba(0, 200, 235, 0.08);
+}
+
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible {
+  outline: 1px solid rgba(39, 216, 241, 0.6);
+  outline-offset: 2px;
+}
+
+/* SUBMIT BUTTON */
+
+.contact-submit {
+  width: 100%;
+  min-height: 41px;
+  margin-top: 0;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 11px;
+  color: #03101e;
+  background: linear-gradient(105deg, #09bed4 0%, #2860f0 100%);
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.25px;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-submit:hover {
+  filter: brightness(1.12);
+}
+
+.contact-submit:active {
+  transform: scale(0.99);
+}
+
+.contact-submit:focus-visible,
+.contact-reset-button:focus-visible {
+  outline: 2px solid #35e0f3;
+  outline-offset: 3px;
+}
+
+/* SUCCESS STATE */
+
+.contact-success {
+  min-height: 320px;
+  padding: 35px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 17px;
+}
+
+.contact-success-icon {
+  color: #00d7a2;
+}
+
+.contact-success h2 {
+  margin: 0;
+  color: #edf2fc;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-success p {
+  max-width: 400px;
+  margin: 0;
+  color: #a8b6ca;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.contact-reset-button {
+  padding: 11px 16px;
+  border: 1px solid rgba(0, 205, 239, 0.4);
+  border-radius: 7px;
+  color: #35dff1;
+  background: #0a1729;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+}
+
+/* RIGHT SIDEBAR */
+
+.contact-sidebar {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+/* DIRECT CHANNELS */
+
+.contact-channels {
+  padding: 25px 22px 22px;
+  border: 1px solid #263449;
+  border-radius: 15px;
+  background: rgba(10, 19, 34, 0.94);
+}
+
+.contact-channels h2 {
+  margin: 0 0 16px;
+  color: #edf2fc;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.contact-channel {
+  min-width: 0;
+  margin-top: 11px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #d0d8e7;
+  text-decoration: none;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.contact-channel:hover {
+  color: #29d9f1;
+}
+
+.contact-channel-icon {
+  width: 27px;
+  height: 29px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #27d9f0;
+  background: #1d293b;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* FEATURED CHARACTER ARTWORK */
+
+.contact-artwork {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 1.38 / 1;
+  overflow: hidden;
+  border: 1px solid rgba(0, 198, 235, 0.3);
+  border-radius: 15px;
+  background: #101324;
+}
+
+.contact-artwork img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contact-artwork-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 35%,
+    rgba(3, 7, 20, 0.15) 60%,
+    rgba(3, 7, 20, 0.94) 100%
+  );
+}
+
+.contact-artwork p {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  margin: 0;
+  color: #55e5f2;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+
+.contact-footer {
+  position: relative;
+  width: 100%;
+  min-height: 83px;
+  padding: 19px 16px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-top: 1px solid rgba(105, 145, 180, 0.2);
+  color: #6e819d;
+  background: #030918;
+  text-align: center;
+}
+
+.contact-footer p {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+.contact-footer span {
+  color: #1fd4ed;
+  font-family: "Courier New", monospace;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 28px 3%;
+  }
+
+  .contact-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+    gap: 18px;
+  }
+
+  .contact-terminal {
+    padding: 23px 20px;
+  }
+
+  .contact-channels {
+    padding: 21px 17px;
+  }
+
+  .contact-field label {
+    font-size: 9px;
+  }
+
+  .contact-channel {
+    font-size: 9px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .contact-section {
+    padding: 24px 16px;
+  }
+
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .contact-terminal {
+    padding: 20px 16px;
+    border-radius: 13px;
+  }
+
+  .terminal-header {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .terminal-filename {
+    font-size: 10px;
+  }
+
+  .terminal-version {
+    font-size: 7px;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 12px;
+  }
+
+  .contact-sidebar {
+    gap: 15px;
+  }
+
+  .contact-channels {
+    padding: 21px;
+  }
+
+  .contact-channel {
+    font-size: 11px;
+  }
+
+  .contact-artwork {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .contact-artwork p {
+    font-size: 11px;
+  }
+
+  .contact-footer {
+    padding: 20px 18px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-section *,
+  .contact-section *::before,
+  .contact-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
