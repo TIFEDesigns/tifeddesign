@@ -1,29 +1,198 @@
-import React from 'react';
-import { Project } from '../types/portfolio';
 
-const PROJECTS: Project[] = [
-  { id: '01', title: 'Product Animation', category: 'Brand Visual • 2026' },
-  { id: '02', title: 'World Building', category: 'AI Landscape • 2026' },
-  { id: '03', title: 'Character Animation', category: 'Short Film • 2026' },
-  { id: '04', title: 'Motion Graphics', category: 'Commercial • 2026' },
+"use client";
+
+import React, { useState } from "react";
+import "./ProjectsGrid.css";
+
+type PortfolioProject = {
+  id: string;
+  category: string;
+  client: string;
+  year: string;
+  title: string;
+  tags: string[];
+  image: string;
+  description: string;
+};
+
+const PROJECTS: PortfolioProject[] = [
+  {
+    id: "01",
+    category: "Product Animation",
+    client: "Aether Tech Labs",
+    year: "2026",
+    title: "Aetheria Product Launch",
+    tags: ["Brand Visual", "Product Commercial"],
+    image:
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=85",
+    description:
+      "A futuristic product-launch concept combining atmospheric lighting, digital environments, and motion-led visual storytelling.",
+  },
+  {
+    id: "02",
+    category: "World Building",
+    client: "SciFi Realm Studios",
+    year: "2026",
+    title: "Neotokyo Floating Citadel",
+    tags: ["AI Landscape", "Concept Art"],
+    image:
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85",
+    description:
+      "An atmospheric world-building study exploring monumental architecture, cinematic environments, and a mysterious futuristic setting.",
+  },
+  {
+    id: "03",
+    category: "Character Animation",
+    client: "Neon Anima",
+    year: "2025",
+    title: "Kira // AI Cyber Heroine",
+    tags: ["Short Film", "Anime Fusion"],
+    image:
+      "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=900&q=85",
+    description:
+      "A cinematic character concept built around dramatic atmosphere, visual mood, and the world of futuristic science fiction.",
+  },
+  {
+    id: "04",
+    category: "Motion Graphics",
+    client: "Apex Motors",
+    year: "2025",
+    title: "Hyperdrive Velocity",
+    tags: ["Commercial", "3D Motion"],
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",
+    description:
+      "A motion-graphics concept inspired by speed, scale, dramatic landscapes, and premium automotive campaign visuals.",
+  },
 ];
 
 export const ProjectsGrid: React.FC = () => {
-  return (
-    <section id="work" className="hud-card">
-      <span className="section-tag">3. Projects</span>
-      <h3 style={{ marginBottom: '16px' }}>Ideas in motion</h3>
+  const [selectedProject, setSelectedProject] =
+    useState<PortfolioProject | null>(null);
 
-      <div className="grid-4">
+  return (
+    <section id="work" className="projects-section">
+      <header className="projects-header">
+        <div className="projects-heading">
+          <span className="projects-icon" aria-hidden="true">
+            ▦
+          </span>
+
+          <h2>
+            <span>3.</span> PROJECTS
+          </h2>
+
+          <span className="projects-subtitle">
+            // CURATED PORTFOLIO
+          </span>
+        </div>
+
+        <span className="projects-hint">CLICK FOR DETAILS</span>
+      </header>
+
+      <div className="projects-grid">
         {PROJECTS.map((project) => (
-          <div key={project.id} className="hud-card" style={{ padding: '16px' }}>
-            <div style={{ height: '120px', background: '#111827', borderRadius: '8px', marginBottom: '12px' }} />
-            <span style={{ fontSize: '0.75rem', color: 'var(--cyan-accent)' }}>{project.id}</span>
-            <h4 style={{ fontSize: '0.95rem' }}>{project.title}</h4>
-            <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{project.category}</p>
-          </div>
+          <button
+            type="button"
+            key={project.id}
+            className="project-card"
+            onClick={() => setSelectedProject(project)}
+            aria-label={`View details for ${project.title}`}
+          >
+            <div className="project-image-wrap">
+              <img
+                className="project-image"
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+              />
+
+              <span className="project-category">
+                {project.category}
+              </span>
+
+              <span className="project-open-icon" aria-hidden="true">
+                ↗
+              </span>
+            </div>
+
+            <div className="project-info">
+              <div className="project-meta">
+                <span>CLIENT: {project.client}</span>
+                <span>{project.year}</span>
+              </div>
+
+              <h3>{project.title}</h3>
+
+              <div className="project-tags">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="project-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </button>
         ))}
       </div>
+
+      {selectedProject && (
+        <div
+          className="project-modal-backdrop"
+          onClick={() => setSelectedProject(null)}
+          role="presentation"
+        >
+          <section
+            className="project-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="project-modal-close"
+              onClick={() => setSelectedProject(null)}
+              aria-label="Close project details"
+            >
+              ×
+            </button>
+
+            <img
+              className="project-modal-image"
+              src={selectedProject.image}
+              alt=""
+            />
+
+            <div className="project-modal-content">
+              <span className="project-modal-label">
+                // {selectedProject.category.toUpperCase()}
+              </span>
+
+              <h3 id="project-modal-title">
+                {selectedProject.title}
+              </h3>
+
+              <p>{selectedProject.description}</p>
+
+              <div className="project-modal-meta">
+                <span>CLIENT: {selectedProject.client}</span>
+                <span>YEAR: {selectedProject.year}</span>
+              </div>
+
+              <div className="project-tags">
+                {selectedProject.tags.map((tag) => (
+                  <span key={tag} className="project-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
     </section>
   );
 };
+
+export default ProjectsGrid;
