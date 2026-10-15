@@ -31,24 +31,24 @@ const ANIMATIONS: AnimationProject[] = [
   },
   {
     id: 2,
-    title: "Cyber Genesis: Reborn",
-    category: "WORLD BUILDING",
+    title: "Natural Soap",
+    category: "SKINCARE SHOWCASE",
     duration: "01:35",
     poster:
       "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=900&q=85",
-    video: "/videos/cyber-genesis.mp4",
+    video: "/videos/naturalSoap.mp4",
     description:
       "A futuristic visual journey exploring character design, atmospheric lighting, and AI-generated environments.",
     tools: ["Midjourney", "Runway", "After Effects"],
   },
   {
     id: 3,
-    title: "Neon Soul / Android Awakening",
-    category: "CHARACTER RIGGING",
+    title: "Shea Butter",
+    category: "SKINCARE SHOWCASE",
     duration: "03:12",
     poster:
       "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
-    video: "/videos/neon-soul.mp4",
+    video: "/videos/sheaButters.mp4",
     description:
       "A cinematic character concept combining futuristic environments, motion design, and atmospheric visual effects.",
     tools: ["Blender 3D", "ComfyUI", "DaVinci Resolve"],
