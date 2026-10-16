@@ -120,20 +120,22 @@ export const FeaturedVideo: React.FC = () => {
   };
 
   return (
-    <section id="featured" className="featured-section">
+    <section id="featured" className="section">
       {/* SECTION HEADER */}
-      <div className="featured-header">
-        <div className="featured-heading">
-          <span className="featured-heading-icon" aria-hidden="true">
+      <div className="section-header">
+        <div className="section-heading">
+          <span className="section-icon" aria-hidden="true">
             ▦
           </span>
 
-          <h2>
-            <span>1.</span> FEATURED ANIMATION
+          <span className="section-number">1.</span>
+
+          <h2 className="section-title">
+            FEATURED ANIMATION
           </h2>
         </div>
 
-        <span className="featured-counter">
+        <span className="section-status">
           SELECT FILM ({selectedIndex + 1}/
           {String(ANIMATIONS.length).padStart(2, "0")})
         </span>

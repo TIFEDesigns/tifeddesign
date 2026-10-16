@@ -55,10 +55,6 @@ export const HeroSection: React.FC = () => {
 
         <div className="hero-preview">
           <div className="preview-artwork" aria-hidden="true">
-            <div className="art-glow" />
-            <div className="art-wave art-wave-one" />
-            <div className="art-wave art-wave-two" />
-            <div className="art-wave art-wave-three" />
           </div>
 
           <div className="preview-label">

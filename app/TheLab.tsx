@@ -44,14 +44,17 @@ export const TheLab: React.FC = () => {
   };
 
   return (
-    <section id="lab" className="lab-section">
-      <header className="lab-header">
-        <div className="lab-heading">
-          <span className="lab-heading-icon">☷</span>
-          <h2>
-            <span className="lab-number">2.</span> THE LAB
+    <section id="lab" className="section">
+      <header className="section-header">
+        <div className="section-heading">
+          <span className="section-icon">☷</span>
+
+          <span className="section-number">2.</span>
+
+          <h2 className="section-title">
+            THE LAB
           </h2>
-          <span className="lab-subtitle">
+          <span className="section-subtitle">
             // AI GENERATIVE SANDBOX
           </span>
         </div>

@@ -65,23 +65,22 @@ export const ProcessPipeline: React.FC = () => {
   const currentStep = STEPS[activeStep];
 
   return (
-    <section id="process" className="process-section">
-      <header className="process-header">
-        <div className="process-heading">
-          <span className="process-icon" aria-hidden="true">
+    <section id="process" className="section">
+      <header className="section-header">
+        <div className="section-heading">
+          <span className="section-icon" aria-hidden="true">
             ◈
           </span>
 
-          <h2>
-            <span>4.</span> THE PROCESS
-          </h2>
+          <span className="section-number">4.</span>
+          <h2 className="section-title">THE PROCESS</h2>
 
-          <span className="process-subtitle">
+          <span className="section-subtitle">
             // PRODUCTION PIPELINE
           </span>
         </div>
 
-        <span className="process-count">4-STEP WORKFLOW</span>
+        <span className="section-status">4-STEP WORKFLOW</span>
       </header>
 
       {/* FOUR PROCESS STAGES */}

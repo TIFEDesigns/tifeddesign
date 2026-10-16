@@ -19,9 +19,9 @@ const PROJECTS: PortfolioProject[] = [
   {
     id: "01",
     category: "Product Animation",
-    client: "Aether Tech Labs",
+    client: "Toke Cosmetics",
     year: "2026",
-    title: "Aetheria Product Launch",
+    title: "Shea Butter Product Launch",
     tags: ["Brand Visual", "Product Commercial"],
     image:
       "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=85",
@@ -31,10 +31,10 @@ const PROJECTS: PortfolioProject[] = [
   {
     id: "02",
     category: "World Building",
-    client: "SciFi Realm Studios",
+    client: "Toke Cosmetics",
     year: "2026",
-    title: "Neotokyo Floating Citadel",
-    tags: ["AI Landscape", "Concept Art"],
+    title: "Natural Soap Product Launch",
+    tags: ["Brand Visual", "Concept Art"],
     image:
       "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85",
     description:
@@ -71,23 +71,25 @@ export const ProjectsGrid: React.FC = () => {
     useState<PortfolioProject | null>(null);
 
   return (
-    <section id="work" className="projects-section">
-      <header className="projects-header">
-        <div className="projects-heading">
-          <span className="projects-icon" aria-hidden="true">
+    <section id="work" className="section">
+      <header className="section-header">
+        <div className="section-heading">
+          <span className="section-icon" aria-hidden="true">
             ▦
           </span>
 
-          <h2>
-            <span>3.</span> PROJECTS
+          <span className="section-number">3.</span>
+
+          <h2 className="section-title">
+            PROJECTS
           </h2>
 
-          <span className="projects-subtitle">
+          <span className="section-subtitle">
             // CURATED PORTFOLIO
           </span>
         </div>
 
-        <span className="projects-hint">CLICK FOR DETAILS</span>
+        <span className="section-status">CLICK FOR DETAILS</span>
       </header>
 
       <div className="projects-grid">

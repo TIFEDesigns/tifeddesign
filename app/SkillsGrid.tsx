@@ -22,27 +22,29 @@ const SKILLS: Skill[] = [
 
 export const SkillsGrid: React.FC = () => {
   return (
-    <section id="skills" className="skills-section">
-      <div className="skills-header">
-        <div className="skills-heading">
+    <section id="skills" className="section">
+      <div className="section-header">
+        <div className="section-heading">
           <Cpu
-            className="skills-heading-icon"
+            className="section-icon"
             size={19}
             strokeWidth={1.8}
             aria-hidden="true"
           />
 
-          <h2>
-            <span className="skills-section-number">7.</span>
+          
+          <span className="section-number">7.</span>
+
+          <h2 className="section-title">
             SKILLS &amp; TOOLS
           </h2>
 
-          <span className="skills-heading-subtitle">
+          <span className="section-subtitle">
             // TECH STACK
           </span>
         </div>
 
-        <span className="skills-header-status">
+        <span className="section-status">
           SOFTWARE MASTERY
         </span>
       </div>
