@@ -51,7 +51,8 @@ export const Contact: React.FC = () => {
             <span />
           </span>
 
-          <span className="section-number">06.</span>
+        {/*
+          <span className="section-number">06.</span> */}
 
           <h2 className="section-title">LET'S CONNECT</h2>
 
