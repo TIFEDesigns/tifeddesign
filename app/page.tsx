@@ -6,7 +6,6 @@ import './globals.css';
 import { Header } from './Header';
 import { HeroSection } from './HeroSection';
 import { FeaturedVideo } from './FeaturedVideo';
-import { TheLab } from './TheLab';
 import { ProjectsGrid } from './ProjectsGrid';
 import { ProcessPipeline } from './ProcessPipeline';
 import { SkillsGrid } from './SkillsGrid';
@@ -22,7 +21,6 @@ export default function Home(): React.JSX.Element {
         <Header isAiMode={isAiMode} setIsAiMode={setIsAiMode} />
         <HeroSection />
         <FeaturedVideo />
-        <TheLab />
         <ProjectsGrid />
         <ProcessPipeline />
         <SkillsGrid />
