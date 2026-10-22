@@ -49,7 +49,8 @@ export const TheLab: React.FC = () => {
         <div className="section-heading">
           <span className="section-icon">☷</span>
 
-          <span className="section-number">2.</span>
+        {/*
+          <span className="section-number">2.</span> */}
 
           <h2 className="section-title">
             THE LAB

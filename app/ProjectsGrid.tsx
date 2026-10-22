@@ -78,7 +78,8 @@ export const ProjectsGrid: React.FC = () => {
             ▦
           </span>
 
-          <span className="section-number">3.</span>
+        {/*
+          <span className="section-number">3.</span> */}
 
           <h2 className="section-title">
             PROJECTS

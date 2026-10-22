@@ -32,8 +32,8 @@ export const SkillsGrid: React.FC = () => {
             aria-hidden="true"
           />
 
-          
-          <span className="section-number">7.</span>
+          {/*
+          <span className="section-number">7.</span> */}
 
           <h2 className="section-title">
             SKILLS &amp; TOOLS

@@ -128,7 +128,8 @@ export const FeaturedVideo: React.FC = () => {
             ▦
           </span>
 
-          <span className="section-number">1.</span>
+         {/*
+          <span className="section-number">1.</span>*/}
 
           <h2 className="section-title">
             FEATURED ANIMATION

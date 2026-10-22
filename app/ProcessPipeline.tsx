@@ -72,7 +72,9 @@ export const ProcessPipeline: React.FC = () => {
             ◈
           </span>
 
-          <span className="section-number">4.</span>
+        {/*
+          <span className="section-number">4.</span> */}
+          
           <h2 className="section-title">THE PROCESS</h2>
 
           <span className="section-subtitle">
