@@ -29,10 +29,12 @@ export const HeroSection: React.FC = () => {
               ENTER THE EXPERIENCE <span>›</span>
             </a>
 
+          {/*
             <a href="#lab" className="btn-secondary">
               <span className="sliders-icon">☷</span>
               OPEN AI LAB
             </a>
+          */}
           </div>
 
           <div className="hero-stats">
@@ -57,12 +59,14 @@ export const HeroSection: React.FC = () => {
           <div className="preview-artwork" aria-hidden="true">
           </div>
 
+          {/*
           <div className="preview-label">
             <span>// LIVE CANVAS PREVIEW</span>
             <span className="ready-status">
               <i /> READY
             </span>
           </div>
+          */}
 
           <div className="preview-caption">
             <span className="featured-label">// FEATURED REEL</span>
