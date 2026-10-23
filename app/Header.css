@@ -16,6 +16,7 @@
   background: rgba(3, 9, 21, 0.96);
   backdrop-filter: blur(14px);
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-main);
 }
 
 /* BRAND */
@@ -69,6 +70,7 @@
   border: 1px solid #1c304a;
   border-radius: 30px;
   background: #080f20;
+  color: var(--text-main);
 }
 
 .tifed-nav-link {
