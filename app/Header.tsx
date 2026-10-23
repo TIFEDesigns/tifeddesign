@@ -43,6 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
         ))}
       </nav>
 
+      {/*
       <div className="tifed-header-actions">
         <span className="tifed-header-descriptor">
           AI ANIMATION &amp; VISUAL EXPERIENCES
@@ -61,6 +62,7 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </button>
       </div>
+      */}
     </header>
   );
 };
